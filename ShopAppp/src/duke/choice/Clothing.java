@@ -4,11 +4,16 @@ public class Clothing {
     private String description;
     private double price;
     private String size;
+    private double minimumPrice;
+    private double taxRate;
 
     public Clothing(String description, double price) {
         this.description = description;
         this.price = price;
         this.size = "M";
+        // SCOPE AND ACCESS DEMO 1
+        this.minimumPrice = 10;
+        this.taxRate = 0.2;
     }
 
     public Clothing(String description, double price, String size) {
@@ -22,7 +27,7 @@ public class Clothing {
     }
 
     public double getPrice() {
-        return price;
+        return price+taxRate;
     }
 
     public String getSize() {
@@ -34,7 +39,9 @@ public class Clothing {
     }
 
     public void setPrice(double price) {
-        this.price = price;
+        if (price >= 10){
+            this.price = price;
+        }
     }
 
     public void setSize(String size) {
