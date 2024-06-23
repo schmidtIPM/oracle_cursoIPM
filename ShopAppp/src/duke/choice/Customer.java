@@ -11,6 +11,10 @@ public class Customer {
         this.name = "Juan";
         this.size = "M";
     }
+    public Customer(String name, int size) {
+        this.name = name;
+        setSize(size);
+    }
 
     public String getName() {
         return name;

@@ -2,6 +2,8 @@ import duke.choice.Clothing;
 import duke.choice.Customer;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class ShopApp {
@@ -19,7 +21,7 @@ public static void main(String[] args) {
     System.out.println("Welcome to Duke Choice Shop, " + c1.getName() + "!");
 
     // EJ.3
-    Clothing item1 = new Clothing("Blue Jacket", 20.9);
+    Clothing item1 = new Clothing("Blue Jacket", 20.9, "L");
     Clothing item2 = new Clothing("Orange T-Shirt", 10.5, "S");
     // LOOPS DEMO 2
     Clothing item3 = new Clothing("Green Scarf", 5, "S");
@@ -31,11 +33,15 @@ public static void main(String[] args) {
     clothings.add(item2);
     clothings.add(item3);
     clothings.add(item4);
+    // EJ.8.2
+    Collections.sort(clothings);
+    System.out.println("The minimum price value is " + item1.getMinimumPrice());
 
     System.out.println("We have available: ");
     int j = 1;
     for (Clothing clothing : clothings) {
-        System.out.println(j + ". " + clothing.getDescription() + "at $" + clothing.getPrice());
+        // EJ.8.1
+        System.out.println(j + ". " + clothing.toString());
         j++;
     }
     System.out.println("How many items do you want to buy?");
