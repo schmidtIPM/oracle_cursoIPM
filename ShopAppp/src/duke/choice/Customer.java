@@ -64,4 +64,13 @@ public class Customer {
         }
         return total;
     }
+    public double averagePrice (){
+        double average = 0;
+        for (Clothing item : this.items) {
+            if (item.getSize() == "L") {
+                average += item.getPrice();
+            }
+        }
+        return average/this.items.size();
+    }
 }

@@ -78,6 +78,11 @@ public static void main(String[] args) {
             break;
         }
     } */
-
+    try {
+        double average = c1.averagePrice();
+    }
+    catch (ArithmeticException e){
+        System.out.println(e.getMessage());
+    }
     System.out.println("Your total would be: $" + c1.getTotalClothingCost());
 }
